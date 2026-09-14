@@ -1,0 +1,13 @@
+---
+title: "Home runs"
+---
+
+```{r}
+#| message: false
+library(tidyverse)
+library(Lahman)
+
+Teams
+```
+
+This page explores home run trends in Major League Baseball.

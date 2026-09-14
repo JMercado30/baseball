@@ -1,0 +1,5 @@
+---
+title: "History of Major League Baseball"
+---
+
+This site explores the history of Major League Baseball through its data, using the Lahman database to trace trends, players, and teams across the sport's long history.

@@ -1,0 +1,25 @@
+project:
+  type: website
+
+website:
+  title: "Baseball"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: home-runs.qmd
+        text: Home runs
+      - about.qmd
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+
+execute:
+  echo: false
+
+
