@@ -4,10 +4,62 @@ title: "Home runs"
 
 ```{r}
 #| message: false
+#| cache: true
 library(tidyverse)
 library(Lahman)
 
-Teams
+shortened_seasons <- c(1918, 1919, 1981, 1994, 1995, 2020)
+
+hr_by_season <- Teams |>
+  group_by(yearID) |>
+  summarise(
+    total_home_runs = sum(HR, na.rm = TRUE),
+    total_team_games = sum(G, na.rm = TRUE),
+    .groups = "drop"
+  ) |>
+  rename(season = yearID) |>
+  mutate(
+    home_runs_per_game = total_home_runs / total_team_games,
+    shortened = season %in% shortened_seasons
+  )
+```
+
+```{r}
+#| message: false
+hr_by_season |>
+  ggplot(aes(x = season, y = home_runs_per_game)) +
+  geom_line(color = "steelblue", linewidth = 0.8) +
+  geom_point(
+    data = filter(hr_by_season, shortened),
+    aes(color = "Shortened season"),
+    size = 2.5
+  ) +
+  scale_color_manual(values = c("Shortened season" = "firebrick")) +
+  labs(
+    title = "Home runs per game by season",
+    x = "Season",
+    y = "Home runs per game",
+    color = "Season type",
+    caption = "Source: Lahman Baseball Database"
+  ) +
+  theme_minimal()
+```
+
+The seasonal drop in 1981, 1994, and 2020 is tied to shortened or disrupted schedules, which reduced total team-games and therefore lowered the total home run count.
+
+```{r}
+#| message: false
+comparison <- hr_by_season |>
+  filter(season %in% c(2019, 1981, 1994, 2020)) |>
+  arrange(match(season, c(2019, 1981, 1994, 2020))) |>
+  select(
+    Season = season,
+    `Total home runs` = total_home_runs,
+    `Total team-games` = total_team_games,
+    `Home runs per game` = home_runs_per_game
+  )
+
+knitr::kable(comparison, digits = 3)
 ```
 
 This page explores home run trends in Major League Baseball.
