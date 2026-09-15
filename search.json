@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "home-runs.html",
+    "href": "home-runs.html",
+    "title": "Home runs",
+    "section": "",
+    "text": "The seasonal drop in 1981, 1994, and 2020 is tied to shortened or disrupted schedules, which reduced total team-games and therefore lowered the total home run count.\n\n\n\n\n\nSeason\nTotal home runs\nTotal team-games\nHome runs per game\n\n\n\n\n2019\n6776\n4858\n1.395\n\n\n1981\n1781\n2788\n0.639\n\n\n1994\n3306\n3200\n1.033\n\n\n2020\n2304\n1796\n1.283\n\n\n\n\n\nThis page explores home run trends in Major League Baseball."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "History of Major League Baseball",
+    "section": "",
+    "text": "This project uses data from the Lahman Baseball Database to trace how the game has changed over time. The clearest story is in home runs per game: once we normalize for the number of team-games in each season, the apparent drops in 1981, 1994, and 2020 look much less dramatic, which helps separate real baseball changes from shortened schedules.\nThe site also highlights the greatest power hitters in MLB history, from the all-time career leaders to Barry Bonds’s season-by-season peak. You can explore those findings in the analysis pages linked in the navbar."
+  }
+]
